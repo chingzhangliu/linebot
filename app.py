@@ -78,7 +78,7 @@ def handle_message(event):
             if _site == _token[1]:
                 _message = TextSendMessage(text=pm_site[_site]) #reply pm2.5 for the site
                 line_bot_api.reply_message(event.reply_token, _message)
-                break;
+                break
     elif '!h' in _token[0] or '!help' in _token[0]:
         _message = TextSendMessage(text="請輸入:課程, 誠品, 空氣 + <關鍵字>")
         line_bot_api.reply_message(event.reply_token, _message)
@@ -129,7 +129,6 @@ def getCls(cls_prefix):
 import os
 if __name__ == "__main__":
     # load PM2.5 records
-    loadPMJson()
     
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
