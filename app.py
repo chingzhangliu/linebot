@@ -1,6 +1,6 @@
 from flask import Flask, request, abort
 
-import urllib.request, json
+import urllib2.request, json
 import requests
 from bs4 import BeautifulSoup
 
@@ -99,8 +99,8 @@ def find_bookls(kw):
     return ans
 
 def loadPMJson():
-    with urllib.request.urlopen("https://opendata.epa.gov.tw/ws/Data/ATM00625/?$format=json") as url:
-        data = json.load(url.read().decode())
+    with urllib2.urlopen("https://opendata.epa.gov.tw/ws/Data/ATM00625/?$format=json") as url:
+        data = json.load(url)
         for ele in data:
             pm_site[ele['SiteName']] = ele['PM2.5']
 
