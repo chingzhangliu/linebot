@@ -100,9 +100,7 @@ def find_bookls(kw):
 
 def loadPMJson():
     with urllib.request.urlopen("https://opendata.epa.gov.tw/ws/Data/ATM00625/?$format=json") as url:
-        data = json.load(url)
-        for ele in data:
-            pm_site[ele['SiteName']] = ele['PM2.5']
+        
 
 def getCls(cls_prefix):
     ret_cls = []
